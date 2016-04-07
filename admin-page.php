@@ -14,7 +14,6 @@ if(!$_SESSION['user_role'] == 'admin')
 {
     header('location:login.php');
 }
-
 require_once('includes/config.inc.php');
 require_once("includes/models/Transaction.php"); 
 require_once('includes/dataaccess/TransactionDataAccess.php');
@@ -26,9 +25,10 @@ require_once('includes/dataaccess/TransactionDataAccess.php');
 $page_title = "Transaction List";
 
 require_once("includes/header.inc.php");
-echo("<br><br><br> admin page");
+//echo("<br><br><br> admin page");
+echo('Hello: ');
 echo $_SESSION['user_display_name'];
-echo("<br><br><br> this is from the admin-page.php file");
+
 ?>
 
 <?php
