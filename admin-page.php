@@ -56,9 +56,10 @@ echo("<br><br>");
 	}
 	//die('bleh');
 
-echo('test 2');
+
 ?>
 </tbody>
+</table>
 <br><br>
 <?php
 require_once("includes/footer.inc.php");
