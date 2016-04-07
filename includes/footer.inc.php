@@ -3,6 +3,7 @@
 			
 <?php
 if (session_status() == PHP_SESSION_ACTIVE) {
+//if(isset($_SERVER["user_role"])){
     //echo('its on');
 			echo"<a href='logout.php'>Logout</a>";
 }else{

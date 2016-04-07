@@ -1,5 +1,5 @@
 <?php
-
+ include 'config.php';
 $page_title = "Login Page";
 //require_once("includes/header.inc.php");
 //require_once('includes/Utils.php');
@@ -8,20 +8,13 @@ $page_title = "Login Page";
 require_once("includes/header.inc.php");
 //$Utils = new Utils();
 
+//var_dump($_SERVER);
+//DIE();
 
-
-?>
-
-
-
-<?php
 if($_POST)
 {
-
-
-
-    
-    include 'config.php';
+   
+   
     $username=$_POST['username'];
     /*
     if(strpos($username, '@') ==false){

@@ -31,7 +31,7 @@ class UserDataAccess{
 	*/
 	function get_all_Users(){
 		//$qStr = "SELECT id, date, amount, transaction_category_id, notes FROM transactions";
-		$qStr = "SELECT user_id, user_email, user_display_name, user_role FROM users";
+		$qStr = "SELECT user_id, user_email, user_display_name, user_role, user_active FROM users";
 		$result = mysqli_query($this->link, $qStr);
 		//die(mysqli_error($this->link)); // THIS WILL SAVE YOUR LIFE IN DEBUGGING!!!
 
@@ -45,6 +45,7 @@ class UserDataAccess{
 			$u->user_email = $row['user_email'];
 			$u->user_display_name = $row['user_display_name'];
 			$u->user_role = $row['user_role'];
+			$u->user_active = $row['user_active'];
 
 			
 			$users[] = $u;
@@ -62,7 +63,7 @@ class UserDataAccess{
 	 * @return array|null 		An assoc array with the data for a transaction
 	 */
 	function get_user_by_id($user_id){
-		$qStr = "SELECT user_id, user_email, user_display_name, user_role FROM users FROM transactions WHERE user_id = " . mysqli_real_escape_string($this->link, $id);
+		$qStr = "SELECT user_id, user_email, user_display_name, user_role FROM users WHERE user_id = " . mysqli_real_escape_string($this->link, $user_id);
 
 		//die($qStr);
 		
