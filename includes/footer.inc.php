@@ -9,8 +9,16 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 }else{
 	//echo('its not on');
 }
+
+$css = file_get_contents('CSS/style.css');
+echo $css;
 ?>
 
+<!-- this CSS code needs to go into the style sheet later on-->
+
+<div id = "leaderboard">leader board here</div>
+<div id = "med_rectangle">med rectangle here</div>
+<div id = "wide_skyscraper">wide skyscraper here</div>
 
 
 

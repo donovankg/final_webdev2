@@ -1,0 +1,23 @@
+<style>
+#leaderboard{
+	width:90px;
+	height: 729px;
+    float:left;
+    padding:10px;
+    background-color: red;
+}
+#med_rectangle{
+	width:250px;
+	height: 300px;
+    float:right;
+    padding:10px;
+    background-color: blue;
+}
+#wide_skyscraper{
+	width: 600px;
+	height: 160px;
+    float:right;
+    padding:10px;
+    background-color: green;
+}
+</style>
