@@ -10,6 +10,7 @@ require_once("includes/models/Transaction.php");
 require_once('includes/dataaccess/TransactionDataAccess.php');
 include('includes/dataaccess/UserDataAccess.php');
 
+
 session_start();
 // now to check if variable is true
 
@@ -34,7 +35,7 @@ echo $_SESSION['user_display_name'];
 //echo('');
 //$row=mysqli_fetch_assoc($result);
 //printf ($row["user_display_name"]);
-
+require_once("includes/custom_recipe_list.php");
 
 ?>
 

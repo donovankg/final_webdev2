@@ -9,7 +9,7 @@ function myErrorHandler($errno, $errstr, $errfile, $errline){
 	if($debug_mode){
 		//echo($str);
 		//mail(to, subject, message) example
-		mail("donovankg@yahoo.com", "error from site X", $str);
+		//mail("donovankg@yahoo.com", "error from site X", $str);
 		//echo ("donovankg@yahoo.comerror from site X", $str);
 	}else{
 		// You might want to send all the super globals with the error message 
@@ -26,6 +26,7 @@ function myErrorHandler($errno, $errstr, $errfile, $errline){
 		//TODO: echo a nice message to the user, or redirect to an error page
 
 		//die();
+
 	}
 }
 
