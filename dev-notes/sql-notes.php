@@ -69,3 +69,24 @@ ALTER TABLE `users`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+-- adding table for recipes
+
+CREATE TABLE `recipes` (
+  `recipe_id` int(11) NOT NULL,
+  `recipe_name` varchar(30) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `steps` varchar(255) NOT NULL,
+  `ingredients` varchar(255) NOT NULL,
+  `recipe_active` enum('yes','no') NOT NULL DEFAULT 'yes'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `recipes`
+--
+
+INSERT INTO `recipes` (`recipe_id`, `recipe_name`, `user_id`, `steps`, `ingredients`, `recipe_active`) VALUES
+(1, 'pasta', 1, 'these are the steps', 'these are the ingredits', 'yes');

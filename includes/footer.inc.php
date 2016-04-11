@@ -17,7 +17,7 @@ echo $css;
 <!-- this CSS code needs to go into the style sheet later on-->
 
 <div id = "leaderboard">leader board here</div>
-<div id = "med_rectangle">med rectangle here</div>
+<div id = "med_rectangle"></div>
 <div id = "wide_skyscraper">wide skyscraper here</div>
 
 
