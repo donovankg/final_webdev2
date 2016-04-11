@@ -7,7 +7,10 @@ function myErrorHandler($errno, $errstr, $errfile, $errline){
 	$str .= "ERROR NUMBER: " . $errno . "<br>ERROR MSG: " . $errstr . "<br>FILE: " . $errfile . "<br>LINE NUMBER: " . $errline . "<br><br>";
 	
 	if($debug_mode){
-		echo($str);
+		//echo($str);
+		//mail(to, subject, message) example
+		mail("donovankg@yahoo.com", "error from site X", $str);
+		//echo ("donovankg@yahoo.comerror from site X", $str);
 	}else{
 		// You might want to send all the super globals with the error message 
 		//$str .= print_r($_POST);
@@ -30,6 +33,8 @@ set_error_handler("myErrorHandler");
 
 function myExceptionHandler($exception) {
     if(DEBUG_MODE){
+		
+
 		echo($exception->getMessage());
 	}else{
 		//How to handle exceptions???
