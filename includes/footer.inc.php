@@ -1,3 +1,5 @@
+     
+
         <div id="footer">
             footer </div><br>
 			
@@ -12,16 +14,10 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 
 $css = file_get_contents('CSS/style.css');
 echo $css;
+
 ?>
 
-<!-- this CSS code needs to go into the style sheet later on-->
-
-<div id = "leaderboard">leader board here</div>
-<div id = "med_rectangle"></div>
-<div id = "wide_skyscraper">wide skyscraper here</div>
-
-
-
+   </div>
         </div>
     </body>
 </html>

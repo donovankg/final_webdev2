@@ -73,7 +73,7 @@ if($_POST)
 }
 
 ?>
-
+<div id="login">
 <form method="POST">
     Email Adress:<br>
     <input type="text" name="username"><br>
@@ -82,7 +82,7 @@ if($_POST)
     <input type="submit">
 
 </form>
-
+</div>  
 
 
 

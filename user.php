@@ -1,3 +1,5 @@
+<div id="login">
+
 <?php
 /**
 * This page will display all transactions in the checkbook
@@ -26,8 +28,7 @@ if(!$_SESSION['user_role'] == 'user')
 $page_title = "User's recipes";
 
 require_once("includes/header.inc.php");
-echo("<br><br><br> user page <br><br>");
-echo("<br><br><br> this is from the user.php file<br>");
+echo("hello: ");
 echo $_SESSION['user_display_name'];
 
 //$row=mysqli_fetch_assoc($result);
@@ -38,7 +39,7 @@ echo $_SESSION['user_display_name'];
 require_once("includes/custom_recipe_list.php");
 
 ?>
-
+</div>
 <?php
 require_once("includes/footer.inc.php");
 
