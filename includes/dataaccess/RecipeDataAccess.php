@@ -31,7 +31,8 @@ class RecipeDataAccess{
 	*/
 	function get_all_Recipes(){
 		//$qStr = "SELECT id, date, amount, transaction_category_id, notes FROM transactions";
-		$qStr = "SELECT recipe_id, recipe_name, user_id, steps, ingredients, recipe_active FROM Recipes";
+		$qStr = "SELECT recipe_id, recipe_name, user_id, steps, ingredients, recipe_active FROM Recipes where user_id ="  . $_SESSION['user_id'];
+		
 		//where user_id = ID of user logged in
 		$result = mysqli_query($this->link, $qStr);
 		//die(mysqli_error($this->link)); // THIS WILL SAVE YOUR LIFE IN DEBUGGING!!!
