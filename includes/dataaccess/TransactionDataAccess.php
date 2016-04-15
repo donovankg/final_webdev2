@@ -13,15 +13,15 @@
 
 class TransactionDataAccess{
 
-	private $link;
+	private $conn;
 
 	/**
 	 * Constructor
 	 *
 	 * @param connection $link 	The link the the database 		
 	 */
-	function TransactionDataAccess($link){
-		$this->link = $link;
+	function TransactionDataAccess($conn){
+		$this->link = $conn;
 	}
 
 	/**

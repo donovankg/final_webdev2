@@ -1,4 +1,5 @@
 <?php
+
 function myErrorHandler($errno, $errstr, $errfile, $errline){
 
 	global $debug_mode;

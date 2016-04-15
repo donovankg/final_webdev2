@@ -7,21 +7,21 @@
 * it's assumed that the web page will do the import, maybe we need
 * to look into 'autoloading'
 * 
-* @author Niall Kader
+* @author Donovan Goldston
 */
 
 
 class RecipeDataAccess{
 
-	private $link;
+	private $conn;
 
 	/**
 	 * Constructor
 	 *
-	 * @param connection $link 	The link the the database 		
+	 * @param connection $conn 	The link the the database 		
 	 */
-	function RecipeDataAccess($link){
-		$this->link = $link;
+	function RecipeDataAccess($conn){
+		$this->link = $conn;
 	}
 
 	/**
@@ -29,14 +29,19 @@ class RecipeDataAccess{
 	*
 	* @return Transaction[] 	Returns an array of transaction rows
 	*/
+	
 	function get_all_Recipes(){
 		//$qStr = "SELECT id, date, amount, transaction_category_id, notes FROM transactions";
-		$qStr = "SELECT recipe_id, recipe_name, user_id, steps, ingredients, recipe_active FROM Recipes where user_id ="  . $_SESSION['user_id'];
+
+		$qStr = "SELECT recipe_id, recipe_name, user_id, steps, ingredients, recipe_active FROM recipes where user_id ="  . $_SESSION['user_id'];
+
 		
 		//where user_id = ID of user logged in
 		$result = mysqli_query($this->link, $qStr);
+		
 		//die(mysqli_error($this->link)); // THIS WILL SAVE YOUR LIFE IN DEBUGGING!!!
-
+		//echo($qStr);
+		//die();
 		$recipes = array();
 		
 		while($row = mysqli_fetch_array($result)){
@@ -52,44 +57,12 @@ class RecipeDataAccess{
 
 			
 			$recipes[] = $r;
+
 		}
 		
 		return $recipes;
 		
 	}
 
-	/**
-	 * Retreives a transaction given it's id
-	 *
-	 * @param int|string $id 	The id of the transaction to fetch
-	 *
-	 * @return array|null 		An assoc array with the data for a transaction
-	 */
-	function get_recipes_by_id($user_id){
-		$qStr = "SELECT er_role FROM users WHERE user_id = " . mysqli_real_escape_string($this->link, $user_id);
 
-		//die($qStr);
-		
-		$result = mysqli_query($this->link, $qStr);
-		//die(mysqli_error($this->link)); // THIS WILL SAVE YOUR LIFE IN DEBUGGING!!!
-
-		if(mysqli_num_rows($result) !== 1){
-			// we have a problem
-			// report error
-			return null;
-		}
-
-		$row = mysqli_fetch_assoc($result);
-
-		// scrub the data
-		$t = new Transaction();
-		$t->id = $row['id'];
-		$t->date = $row['date'];
-		$t->amount = $row['amount'];
-		$t->transaction_category_id = $row['transaction_category_id'];
-		$t->notes = htmlentities($row['notes']);
-
-		return $t;
-	
-	}
 }

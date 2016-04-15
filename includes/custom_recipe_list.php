@@ -10,10 +10,12 @@
 	<tbody> 
 
 <?php
-include('includes/dataaccess/RecipeDataAccess.php');
+
 require_once("includes/models/recipe.php"); 
-$da = new RecipeDataAccess($link);
+require_once('includes/dataaccess/RecipeDataAccess.php');
+$da = new RecipeDataAccess($conn);
 $recipes = $da->get_all_Recipes();
+
 
 
 	if(!empty($recipes)){

@@ -6,12 +6,14 @@
 * test
 * Details about this page can go here...
 *
-* @author Niall Kader
-*/require_once('includes/config.inc.php');
-require_once("includes/models/Transaction.php"); 
-require_once('includes/dataaccess/TransactionDataAccess.php');
-include('includes/dataaccess/UserDataAccess.php');
+* @author Donovan Goldston
+*/
+//require_once('includes/config.inc.php');
+//require_once("includes/models/Transaction.php"); 
+//require_once('includes/dataaccess/TransactionDataAccess.php');
+//include('includes/dataaccess/UserDataAccess.php');
 
+require_once('config.php');
 
 session_start();
 // now to check if variable is true

@@ -1,10 +1,8 @@
 <?php
  include 'config.php';
 $page_title = "Login Page";
-//require_once("includes/header.inc.php");
 //require_once('includes/Utils.php');
-//require_once('includes/dataaccess/loginDataAccess.php');
-//require_once('includes/dataaccess/TransactionDataAccess.php');
+require_once('includes/dataaccess/loginDataAccess.php');
 require_once("includes/header.inc.php");
 //$Utils = new Utils();
 

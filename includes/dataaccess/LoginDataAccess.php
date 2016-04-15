@@ -1,15 +1,15 @@
 <?php
 class LoginDataAccess {
 
-	private $link;
+	private $conn;
 
 	/**
 	 * Constructor
 	 *
-	 * @param connection $link 	The link the the database 		
+	 * @param connection $conn 	The link the the database 		
 	 */
-	function LoginDataAccess($link){
-		$this->link = $link;
+	function LoginDataAccess($conn){
+		$this->link = $conn;
 
 
 	}

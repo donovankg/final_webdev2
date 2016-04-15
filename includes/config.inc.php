@@ -41,14 +41,18 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 	$root_dir = "/final/";
 	$debug_mode = true;
 	ini_set('display_errors', 1);
+	error_reporting(E_ALL);
 }else{
 	// PRODUCTION SETTINGS
-	$host = "???";
-	$db = "???";
-	$user = "???";
-	$password = "???";
-	$root_dir = "/";
-	$debug_mode = false;
+	error_reporting(E_ALL);  // turn on all error reporting
+	$host = "198.71.225.58:3306";
+	$db = "final_db";
+	$user = "usernew_this";
+	$password = "@I18nk7o";
+	$root_dir = "/final/";
+	$debug_mode = true;
+	ini_set('display_errors', 1);
+	error_reporting(E_ALL);
 }
 
 require_once("custom_error_handler.inc.php");

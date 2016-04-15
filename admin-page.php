@@ -4,35 +4,31 @@
 *
 * Details about this page can go here...
 *
-* @author Niall Kader
+* @author Donovan Goldston
 */
 session_start();
 // now to check if variable is true
 
 if(!$_SESSION['user_role'] == 'admin')
 
-{
-    header('location:login.php');
-}
-require_once('includes/config.inc.php');
+	{
+   		 header('location:login.php');
+	}
+require_once('config.php');
 require_once("includes/models/User.php"); 
 require_once('includes/dataaccess/UserDataAccess.php');
-$da = new UserDataAccess($link);
+$da = new UserDataAccess($conn);
 $users = $da->get_all_users();
-// get the transactions from the db
-//$da = new TransactionDataAccess($link);
-//$transactions = $da->get_all_transactions();
+
 
 $page_title = "Admin Page";
 
 require_once("includes/header.inc.php");
-//echo("<br><br><br> admin page");
 echo('Hello: ');
 echo $_SESSION['user_display_name'];
 echo("<br><br>");
 ?>
 
-<!--<a href="transaction-details.php"> Create new transaction</a>  use this to make a new user-->
 <table border="1">
 	<thead>
 		<th>User Name</th>
@@ -54,7 +50,6 @@ echo("<br><br>");
 	}else{
 		echo("<tr><td colspan='4' align='center'>NO USERS</td></tr>");
 	}
-	//die('bleh');
 
 
 ?>

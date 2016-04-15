@@ -1,11 +1,6 @@
 <?php
 /**
-* Model class for transactions in the checkbook
-* 
-* Note that when the user enters a date, it must be in mm/dd/yyyy format.
-* But MySql requires it to be yyyy-mm-dd format
-* 
-* @author Niall Kader
+* @author Donovan Goldston
 */
 
 class Recipe {
