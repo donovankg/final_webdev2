@@ -1,6 +1,6 @@
 <?php
 class Utils{
-	
+	//not currently being used
 
 	function create_select_box($name, $options, $selected_value){
 		//echo ("test");

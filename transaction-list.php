@@ -4,7 +4,7 @@
 *
 * Details about this page can go here...
 *
-* @author Niall Kader
+* @author Donovan Goldston
 */
 //session_start();
 // now to check if variable is true

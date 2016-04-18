@@ -1,5 +1,5 @@
 <?php
-global $debug_mode;
+$debug_mode;
 	// Here change variables with your own settings
 	/*
 	$mysqlhost='localhost';
@@ -42,6 +42,7 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 
 require_once("includes/custom_error_handler.inc.php");
 
+set_error_handler ("myErrorHandler");
 // set up a connection to the db
 $conn=mysqli_connect($mysqlhost,$mysqlusername,$mysqlpassword,$mysqldb);
 ?>

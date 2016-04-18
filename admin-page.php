@@ -60,4 +60,3 @@ echo("<br><br>");
 require_once("includes/footer.inc.php");
 
 ?>
-test
