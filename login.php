@@ -14,7 +14,7 @@ if($_POST)
    
    
     $username=$_POST['username'];
-    /*
+    
     if(strpos($username, '@') ==false){
         echo ('this is not a valid email, "@" ia missing <br>');
 
@@ -22,7 +22,7 @@ if($_POST)
         (strpos($username, '.') ==false){
         echo ('this is not a valid email, "." is missing <br>');
     }
-*/
+
 
 
     
