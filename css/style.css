@@ -19,7 +19,7 @@
 }
 
 #med_rectangle{
-        margin-top: -23px;
+    margin-top: 0px;
     width:250px;
     height: 300px;
     float:right;
@@ -39,9 +39,13 @@
     padding:10px;
     background-color: green;    
 }
-
 #login{
-padding-left: 120px;
-padding-top: 60px;
+    padding-left: 120px;
+    padding-top: 60px;
 }
+#txtarea_comments{
+    resize: none;
+}
+
+
 </style>

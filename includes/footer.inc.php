@@ -1,8 +1,6 @@
      
 
         <div id="footer">
-            footer </div><br>
-			
 <?php
 if (session_status() == PHP_SESSION_ACTIVE) {
 //if(isset($_SERVER["user_role"])){
@@ -11,9 +9,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 }else{
 	//echo('its not on');
 }
-
-$css = file_get_contents('CSS/style.css');
-echo $css;
+echo"<a href='contactus.php'>Contact Us.</a>";
 
 ?>
 
