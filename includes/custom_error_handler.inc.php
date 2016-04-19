@@ -1,8 +1,6 @@
 <?php
 
 function myErrorHandler($errno, $errstr, $errfile, $errline){
-// possible fix
-//http://stackoverflow.com/questions/26482254/undefined-variable-session-in-class
   global $debug_mode;
 
   $str = "THIS IS OUR CUSTOM ERROR HANDLER"+'<br>';
@@ -37,8 +35,8 @@ function myErrorHandler($errno, $errstr, $errfile, $errline){
     $message =$str;
     $header='from: website webmaster@donovangoldston.com/final.com';
     
-     //mail($to, $subject, $message, $header);
-echo($message);
+    mail($to, $subject, $message, $header);
+    //echo($message);
 
     //TODO: send email to web admin
     //TODO: echo a nice message to the user, or redirect to an error page

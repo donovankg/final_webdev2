@@ -46,4 +46,4 @@ if(!isset($_SESSION['user_role'])){
 ?>
 
   <div id='login'>
-  <h1>Recipes Page</h1>
+  <h1>Recipes Page (add in a banner here later)</h1>
