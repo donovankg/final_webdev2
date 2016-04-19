@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 }else{
 	//echo('its not on');
 }
-echo"<a href='contactus.php'>Contact Us.</a>";
+echo"<a href='contactus.php'>Contact Us</a>";
 
 ?>
 

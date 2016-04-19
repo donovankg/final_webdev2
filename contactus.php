@@ -1,6 +1,4 @@
 <?php
-//contact us.
-//input boxes for name, email, and comment / question
  include 'config.php';
 $page_title = "Contact Us";
 require_once('includes/dataaccess/loginDataAccess.php');
@@ -8,6 +6,7 @@ require_once("includes/header.inc.php");
 
 
 ?>
+<!-- form for collecting data from the user-->
 <form method="POST" id ="contactus">
     Name:<br>
     <input type="text" name="name"><br>
@@ -18,7 +17,7 @@ require_once("includes/header.inc.php");
 
 
 </form>
-<a href="javascript:history.back()">return to previous page</a>
+
 
 <?php
 
@@ -26,27 +25,28 @@ $errors ='';
 $contactEmail ='donovankg@yahoo.com';
 
 
-
-if(empty($_REQUEST['name'])           ||
-   empty($_REQUEST['email'])          ||
-   empty($_REQUEST['txtarea_comments']))
+//checks to see if there are any blanks in the posted txtboxes
+if(empty($_POST[htmlentities('name')])           ||
+   empty($_POST[htmlentities('email')])          ||
+   empty($_POST[htmlentities('txtarea_comments')]))
 {
 	$errors .="\n Error: all feilds are required";
 }
-If(isset($_REQUEST['submitted'])){
+//if the form is submitted it will collect the information and send it into an email, then redirect to login.php
+If(isset($_POST['submitted'])){
 	if($errors !=''){
 		echo('please fill out all the required fields');
 	}else{
-		$name = $_REQUEST['name'];
-		$email = $_REQUEST['email'];
-		$txtarea_comments = $_REQUEST['txtarea_comments'];
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$txtarea_comments = $_POST['txtarea_comments'];
 
-		$to ='xpyrox@yahoo.com';
-		$subject='contacted by:' . $name .' donovangoldston.com/final/';
+		$to ='donovankg@yahoo.com';
+		$subject='contacted by:' . $name .' via: donovangoldston.com/final/';
 		$message =($txtarea_comments);
 		$header='from: ' . $email;
     
-    	mail($to, $subject, $message, $header);
+    	mail($to, $subject, $message);
 
 
 		echo'<style type="text/css">
@@ -65,5 +65,7 @@ If(isset($_REQUEST['submitted'])){
    		header("refresh:3; url=login.php");
 	}
 }
-
 ?>
+<!-- a back link so they can back out of the page if they don't wish to enter anything -->
+<br>
+<a href="javascript:history.back()">return to previous page</a>
