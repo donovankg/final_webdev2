@@ -49,8 +49,8 @@ if($_POST)
 
 	//echo($query);
 	mysqli_query($conn, $query);
-	echo($conn . '<br>');
-	echo ($query);
+//	echo($conn . '<br>');
+//	echo ($query);
 
 	header('location:user.php');
 }
@@ -65,7 +65,7 @@ recipe_id = $_SESSION["user_id"] = htmlentities($row['user_id']); //this is from
  -->
 <form method="POST" id ="contactus">
  
-    Eamil Address:<br>
+    Recipe Name:<br>
     <input type="recipe_name" name="recipe_name"><br>
     Enter the Steps:<br>
     <textarea row ="20" cols ="50" id = "txtarea_comments" name="steps"></textarea><br>

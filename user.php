@@ -22,7 +22,7 @@ echo("hello: ");
 echo $_SESSION['user_display_name'];
 echo'<br>';
 echo <<<HTML
-	<a href="new_recipe.php">add new recipe</a>
+	<a href="new_recipe.php">add new recip</a>
 HTML;
 require_once("includes/custom_recipe_list.php");
 

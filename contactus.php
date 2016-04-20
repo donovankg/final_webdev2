@@ -12,6 +12,7 @@ require_once("includes/header.inc.php");
     <input type="text" name="name"><br>
     Eamil Address:<br>
     <input type="text" name="email"><br>
+    Send us a message or comment:<br>
     <textarea row ="20" cols ="50" id = "txtarea_comments"name="txtarea_comments"></textarea><br>
     <input type="submit" name ="submitted">
 
@@ -42,8 +43,8 @@ If(isset($_POST['submitted'])){
 		$txtarea_comments = $_POST['txtarea_comments'];
 
 		$to ='donovankg@yahoo.com';
-		$subject='contacted by:' . $name .' via: donovangoldston.com/final/';
-		$message =($txtarea_comments);
+		$subject='contacted by: ' . $name .' via: donovangoldston.com/final/';
+		$message =($subject . ' <br> '.$txtarea_comments);
 		$header='from: ' . $email;
     
     	mail($to, $subject, $message);
@@ -62,7 +63,7 @@ If(isset($_POST['submitted'])){
 		}
 
    		echo ", redirecting you in 4 seconds....";
-   		header("refresh:3; url=login.php");
+   		//header("refresh:3; url=login.php");
 	}
 }
 ?>
