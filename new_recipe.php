@@ -36,17 +36,24 @@ if($_POST)
     }
 
 
-//$recipe_id=  
-$recipe_name='';
-$user_id=$_SESSION["user_id"];;
-$steps='';
-$ingredients=; 	
-$recipe_active ='yes';
+	//$recipe_id=  
+	$recipe_name=$_POST['recipe_name'];
+	$user_id=$_SESSION["user_id"];
+	$steps=$_POST['steps'];
+	$ingredients=$_POST['ingredients']; 	
+	$recipe_active ='yes';
 
 
-$query="INSERT INTO `recipes`(recipe_name, steps, user_id, ingredients, recipe_active)
-values('test_print','sample steps', '2','sample ingredients','yes')";
+	$query="INSERT INTO `recipes`(recipe_name, steps, user_id, ingredients, recipe_active)
+	values('".$recipe_name."', '".$steps."', '".$user_id."', '".$ingredients."', '".$recipe_active."')";
 
+	//echo($query);
+	mysqli_query($conn, $query);
+	echo($conn . '<br>');
+	echo ($query);
+
+	header('location:user.php');
+}
 ?>
 
 <!--
