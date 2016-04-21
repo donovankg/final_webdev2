@@ -48,7 +48,7 @@ if($_POST)
 	values('".$recipe_name."', '".$steps."', '".$user_id."', '".$ingredients."', '".$recipe_active."')";
 
 	//echo($query);
-	mysqli_query($conn, $query);
+	mysqli_query($conn, $query) or die(mysqli_error($conn));
 //	echo($conn . '<br>');
 //	echo ($query);
 

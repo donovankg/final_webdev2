@@ -12,11 +12,7 @@ if(!$_SESSION['user_role'] == 'user')
 $da = new RecipeDataAccess($conn);
 //echo($_GET['recipe_id'] . '<br>');
 /*
-	$recipe_name=$_POST['recipe_name'];
-	$user_id=$_SESSION["user_id"];
-	$steps=$_POST['steps'];
-	$ingredients=$_POST['ingredients']; 	
-	$recipe_active ='yes';
+	
 */
 $recipe = new Recipe();
 if(isset($_GET['recipe_id'])){
@@ -24,7 +20,6 @@ if(isset($_GET['recipe_id'])){
 	$recipe = $da->get_recipe_by_id($_GET['recipe_id']);
 
 }
-
 
 
 
@@ -54,7 +49,17 @@ if(isset($_GET['recipe_id'])){
 //echo('add a hide div here for the user page');
 
 If(isset($_POST['btnSubmit'])){
+	$recipe_id =$_REQUEST['recipe_id'];
+	$recipe_name=$_REQUEST['recipe_name'];
+	$steps=$_POST['steps'];
+	$ingredients=$_POST['ingredients']; 	
+	$recipe_active =['recipe_active'];
 
+
+	$query="UPDATE recipes SET  `recipe_name` = '$recipe_name', 
+		`steps`='$steps', `ingredients` = '$ingredients' , `recipe_active` = '$recipe_active' WHERE `recipe_id` =  '$recipe_id'" ;
+		echo($query);
+		mysqli_query($conn, $query);
 
     header('Location: user.php');
 

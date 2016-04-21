@@ -85,7 +85,7 @@ class RecipeDataAccess{
 		$r->recipe_name = $row['recipe_name'];
 		$r->steps = $row['steps'];
 		$r->ingredients = $row['ingredients']; 	
-		$r->recipe_active = $row['yes'];
+		$r->recipe_active = $row['recipe_active'];
 
 
 
