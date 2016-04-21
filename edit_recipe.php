@@ -46,8 +46,8 @@ if(isset($_GET['recipe_id'])){
 
 
 <?php
-//echo('add a hide div here for the user page');
 
+//checks to see if the button is pressed then runs an update statement
 If(isset($_POST['btnSubmit'])){
 	$recipe_id =$_REQUEST['recipe_id'];
 	$recipe_name=$_REQUEST['recipe_name'];
