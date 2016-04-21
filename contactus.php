@@ -38,9 +38,9 @@ If(isset($_POST['submitted'])){
 	if($errors !=''){
 		echo('please fill out all the required fields');
 	}else{
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$txtarea_comments = $_POST['txtarea_comments'];
+		$name = $_POST[htmlentities('name')];
+		$email = $_POST[htmlentities('email')];
+		$txtarea_comments = $_POST[htmlentities('txtarea_comments')];
 
 		$to ='donovankg@yahoo.com';
 		$subject='contacted by: ' . $name .' via: donovangoldston.com/final/';
@@ -63,7 +63,7 @@ If(isset($_POST['submitted'])){
 		}
 
    		echo ", redirecting you in 4 seconds....";
-   		//header("refresh:3; url=login.php");
+   		header("refresh:3; url=login.php");
 	}
 }
 ?>

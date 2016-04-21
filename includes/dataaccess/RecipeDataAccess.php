@@ -63,6 +63,37 @@ class RecipeDataAccess{
 		return $recipes;
 		
 	}
+	function get_recipe_by_id($recipe_id){
+		//$qStr = "SELECT id, DATE_FORMAT(date, '%m/%d/%Y') as date, amount, transaction_category_id, notes FROM transactions WHERE id = " . mysqli_real_escape_string($this->link, $id);
+		$qStr = "SELECT * FROM recipes Where recipe_id = " . mysqli_real_escape_string($this->link, $recipe_id);
+		//die($qStr);
+		
+		$result = mysqli_query($this->link, $qStr);
+		//die(mysqli_error($this->link)); // THIS WILL SAVE YOUR LIFE IN DEBUGGING!!!
 
+		if(mysqli_num_rows($result) !== 1){
+			// we have a problem
+			// report error
+			return null;
+		}
+
+		$row = mysqli_fetch_assoc($result);
+
+		// scrub the data
+		$r = new Recipe();
+		$r->recipe_id = $row['recipe_id'];
+		$r->recipe_name = $row['recipe_name'];
+		$r->steps = $row['steps'];
+		$r->ingredients = $row['ingredients']; 	
+		$r->recipe_active = $row['yes'];
+
+
+
+		return $r;
+
+
+
+
+}
 
 }

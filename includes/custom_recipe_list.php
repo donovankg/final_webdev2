@@ -6,6 +6,8 @@
 		<th>steps</th>
 		<th>ingredients</th>
 		<th>active?</th>
+		<th>edit</th>
+		<th>delete</th>
 	</thead>
 	<tbody> 
 
@@ -25,6 +27,8 @@ $recipes = $da->get_all_Recipes();
 			echo("<td>" . $r->steps . "</td>");
 			echo("<td>" . $r->ingredients . "</td>");
 			echo("<td>" . $r->recipe_active . "</td>");
+			echo("<td><a href='edit_recipe.php?recipe_id=" .$r->recipe_id ."'>edit </a></td>");
+			echo("<td><a href='delete_recipe.php?recipe_id=" .$r->recipe_id ."'>delete </a></td>");
 			
 			echo("</tr>");
 		}
