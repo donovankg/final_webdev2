@@ -31,7 +31,9 @@ if(!isset($_SESSION['user_role'])){
 //apply leader board if $_SESSION = false
   if(isset($_SESSION["user_role"])&&($_SESSION["user_role"]=='admin')){
 ?>
-<div id = "med_rectangle">med rectangle here</div>
+<div id = "med_rectangle">
+  <img src="images/med-rectangle.jpg" class="stretch" alt="" />
+</div>
 <?php
   }
 ?>
@@ -40,7 +42,9 @@ if(!isset($_SESSION['user_role'])){
 //apply leader board if $_SESSION = false
   if(isset($_SESSION["user_role"])&&($_SESSION["user_role"]=='user')){
 ?>
-<div id = "wide_skyscraper">wide skyscraper here</div>
+<div id = "wide_skyscraper">
+  <img src="images/skyscraper.jpg" class="stretch" alt="" />
+</div>
 <?php
   }
 ?>

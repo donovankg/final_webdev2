@@ -21,9 +21,18 @@ if(isset($_GET['recipe_id'])){
 
 }
 
+	$recipe_id =$_REQUEST['recipe_id'];
+	$recipe_name=$_REQUEST['recipe_name'];
+	$steps=$_POST['steps'];
+	$ingredients=$_POST['ingredients']; 	
+	$recipe_active =['recipe_active'];
 
 
+	$query="DELETE FROM recipes WHERE `recipe_id` =  '$recipe_id'" ;
+		echo($query);
+		mysqli_query($conn, $query);
 
+    header('Location: user.php');
 
 ?>
 
@@ -38,27 +47,3 @@ if(isset($_GET['recipe_id'])){
     <a href="javascript:history.back()">click back to cancel.</a>
 
 </form>
-
-
-<?php
-
-//checks to see if the button is pressed to delete from the users table based on the recipe Id
-If(isset($_POST['btnSubmit'])){
-	$recipe_id =$_REQUEST['recipe_id'];
-	$recipe_name=$_REQUEST['recipe_name'];
-	$steps=$_POST['steps'];
-	$ingredients=$_POST['ingredients']; 	
-	$recipe_active =['recipe_active'];
-
-
-	$query="DELETE FROM recipes WHERE `recipe_id` =  '$recipe_id'" ;
-		echo($query);
-		mysqli_query($conn, $query);
-
-    header('Location: user.php');
-
-}
-
-
-
-?>

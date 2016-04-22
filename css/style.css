@@ -26,18 +26,16 @@
     padding:0px;
     background-color: blue;
     
-    background-size: 250px 300px;
-    background-repeat: no-repeat;
 }
 #wide_skyscraper{
     
-    margin-top: -23px;
-    left: 125;
+    margin-top: -80px;
+    right: 12;
     width: 160px;
     height: 600px;
     float:right;
-    padding:10px;
     background-color: green;    
+ 
 }
 #login{
     padding-left: 120px;

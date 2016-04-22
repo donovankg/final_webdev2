@@ -34,12 +34,16 @@ if(isset($_GET['recipe_id'])){
 <form method="POST">
 
     Recipe Name:<br>
-    <input type="recipe_name" name="recipe_name" value="<?php echo($recipe->recipe_name)?>"/><br>
+    <input type="text" name="recipe_name" value="<?php echo($recipe->recipe_name)?>"/><br>
     Enter the Steps:<br>
     <textarea row ="20" cols ="50" id = "txtarea_comments" name="steps"><?php echo($recipe->steps)?></textarea><br>
     Enter the ingrentients list:<br>
-    <textarea row ="20" cols ="50" id = "txtarea_comments "name="ingredients"> <?php echo($recipe->ingredients)?></textarea><br>
-    
+    <textarea row ="20" cols ="50" id = "txtarea_comments "name="ingredients"><?php echo($recipe->ingredients)?></textarea><br>
+  
+  	Is this Recipe active?:<br>
+    <input type="text" name="recipe_active" value="<?php echo($recipe->recipe_active)?>"/><br>
+  
+
     <input type="submit" name ="btnSubmit"value="submit">
 
 </form>
@@ -51,13 +55,16 @@ if(isset($_GET['recipe_id'])){
 If(isset($_POST['btnSubmit'])){
 	$recipe_id =$_REQUEST['recipe_id'];
 	$recipe_name=$_REQUEST['recipe_name'];
-	$steps=$_POST['steps'];
-	$ingredients=$_POST['ingredients']; 	
-	$recipe_active =['recipe_active'];
+	$steps=$_REQUEST['steps'];
+	$ingredients=$_REQUEST['ingredients']; 	
+	$recipe_active =$_REQUEST['recipe_active'];
 
 
 	$query="UPDATE recipes SET  `recipe_name` = '$recipe_name', 
-		`steps`='$steps', `ingredients` = '$ingredients' , `recipe_active` = '$recipe_active' WHERE `recipe_id` =  '$recipe_id'" ;
+		`steps`='$steps', 
+		`ingredients` = '$ingredients' , 
+		`recipe_active` = '$recipe_active' 
+		WHERE `recipe_id` =  '$recipe_id'" ;
 		echo($query);
 		mysqli_query($conn, $query);
 
