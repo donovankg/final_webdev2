@@ -53,18 +53,20 @@ if(isset($_GET['recipe_id'])){
 
 //checks to see if the button is pressed then runs an update statement
 If(isset($_POST['btnSubmit'])){
-	$recipe_id =$_REQUEST['recipe_id'];
-	$recipe_name=$_REQUEST['recipe_name'];
-	$steps=$_REQUEST['steps'];
-	$ingredients=$_REQUEST['ingredients']; 	
-	$recipe_active =$_REQUEST['recipe_active'];
+	$recipe_id =htmlentities($_REQUEST['recipe_id']);
+	$recipe_name=htmlentities($_REQUEST['recipe_name']);
+	$steps=htmlentities($_REQUEST['steps']);
+	$ingredients=htmlentities($_REQUEST['ingredients']); 	
+	$recipe_active =htmlentities($_REQUEST['recipe_active']);
 
+$id = mysqli_real_escape_string($conn, $recipe_id);
+			//FROM transactions WHERE id = " . mysqli_real_escape_string($this->link, $id);
 
 	$query="UPDATE recipes SET  `recipe_name` = '$recipe_name', 
 		`steps`='$steps', 
 		`ingredients` = '$ingredients' , 
 		`recipe_active` = '$recipe_active' 
-		WHERE `recipe_id` =  '$recipe_id'" ;
+		WHERE `recipe_id` =  '$id'" ;
 		echo($query);
 		mysqli_query($conn, $query);
 

@@ -13,6 +13,10 @@ if($_POST)
 {
    
    
+
+
+
+   
     $username=$_POST['username'];
     
     if(strpos($username, '@') ==false){
@@ -30,6 +34,7 @@ if($_POST)
     $sUser=mysqli_real_escape_string($conn,$username);
     $sPass=mysqli_real_escape_string($conn,md5($password));
     // For Security 
+
     $query="SELECT * From users where user_email='$sUser' and user_password='$sPass' and user_active ='yes'" ;
 //
 

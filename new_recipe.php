@@ -23,8 +23,6 @@ require_once("includes/header.inc.php");
 
 if($_POST)
 {
-   
-   
     $username=$_POST['username'];
     
     if(strpos($username, '@') ==false){
@@ -36,19 +34,19 @@ if($_POST)
     }
 
 
-	//$recipe_id=  
-	$recipe_name=$_POST['recipe_name'];
-	$user_id=$_SESSION["user_id"];
-	$steps=$_POST['steps'];
-	$ingredients=$_POST['ingredients']; 	
-	$recipe_active ='yes';
+	//on post the stuff in the text boxes will go into the query and then to the database
+	$recipe_name=htmlentities($_POST['recipe_name']);
+	$user_id=htmlentities($_SESSION["user_id"]);
+	$steps=htmlentities($_POST['steps']);
+	$ingredients=htmlentities($_POST['ingredients']); 	
+	//$recipe_active = htmlentities($_POST['yes']);
 
 
 	$query="INSERT INTO `recipes`(recipe_name, steps, user_id, ingredients, recipe_active)
 	values('".$recipe_name."', '".$steps."', '".$user_id."', '".$ingredients."', '".$recipe_active."')";
 
 	//echo($query);
-	mysqli_query($conn, $query) or die(mysqli_error($conn));
+	mysqli_query($conn, $query);
 //	echo($conn . '<br>');
 //	echo ($query);
 
@@ -56,13 +54,7 @@ if($_POST)
 }
 ?>
 
-<!--
-items needed to be posted
-recipe_id = $_SESSION["user_id"] = htmlentities($row['user_id']); //this is from login.php
- 	recipe_name 	user_id 	steps 	ingredients 	
- 	recipe_active == 'yes'
 
- -->
 <form method="POST" id ="contactus">
  
     Recipe Name:<br>

@@ -20,7 +20,7 @@ require_once('includes/dataaccess/UserDataAccess.php');
 $da = new UserDataAccess($conn);
 $users = $da->get_all_users();
 
-
+//shows title page name
 $page_title = "Admin Page";
 
 require_once("includes/header.inc.php");
@@ -28,7 +28,7 @@ echo('Hello: ');
 echo $_SESSION['user_display_name'];
 echo("<br><br>");
 ?>
-
+<!-- makes the table for admin page-->
 <table border="1">
 	<thead>
 		<th>User Name</th>
@@ -38,6 +38,7 @@ echo("<br><br>");
 	</thead>
 	<tbody> 
 <?php
+
 	if(!empty($users)){
 		foreach ($users as $u) {
 			echo("<tr>");

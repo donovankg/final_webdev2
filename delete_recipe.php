@@ -21,14 +21,21 @@ if(isset($_GET['recipe_id'])){
 
 }
 
-	$recipe_id =$_REQUEST['recipe_id'];
-	$recipe_name=$_REQUEST['recipe_name'];
-	$steps=$_POST['steps'];
-	$ingredients=$_POST['ingredients']; 	
-	$recipe_active =['recipe_active'];
+	$recipe_id =htmlentities($_REQUEST['recipe_id']);
+	$recipe_name=htmlentities($_REQUEST['recipe_name']);
+	$steps=htmlentities($_POST['steps']);
+	$ingredients=htmlentities($_POST['ingredients']); 	
+	$recipe_active =htmlentities(['recipe_active']);
 
 
-	$query="DELETE FROM recipes WHERE `recipe_id` =  '$recipe_id'" ;
+
+
+
+
+	//used to prevent sql injection
+	$id = mysqli_real_escape_string($conn, $recipe_id);
+			//FROM transactions WHERE id = " . mysqli_real_escape_string($this->link, $id);
+	$query="DELETE FROM recipes WHERE `recipe_id` = '$id'";
 		echo($query);
 		mysqli_query($conn, $query);
 
